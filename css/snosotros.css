@@ -1,0 +1,10 @@
+  .card-hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(199, 215, 68, 0.5);
+  }
+  .position-relative img:hover {
+    transform: scale(1.05);
+  }

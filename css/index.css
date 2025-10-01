@@ -1,0 +1,59 @@
+ body {
+      background: linear-gradient(135deg, #213877, #C7D744);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    }
+    h3 {
+      color: #213877;
+      font-weight: bold;
+    }
+    .form-label {
+      color: #213877;
+      font-weight: 500;
+    }
+    .form-control:focus {
+      box-shadow: 0 0 5px #C7D744;
+      border-color: #C7D744;
+    }
+    .btn-primary {
+      background: #213877;
+      border: none;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background: #C7D744;
+      color: #213877;
+    }
+    .text-muted {
+      color: #555 !important;
+    }
+
+    /*IMAGEN DEL LOGUEO*/
+ .imagenindex {
+  max-width: 120px;      /* tamaño controlado */
+  height: auto;
+}
+
+.tituloindex {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #213877;        /* azul corporativo */
+  letter-spacing: 2px;   /* espaciado entre letras */
+}
+
+.tituloindex::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #C7D744;   /* línea verde debajo */
+  margin: 8px auto 0;
+  border-radius: 2px;
+}

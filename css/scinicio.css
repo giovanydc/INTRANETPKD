@@ -1,0 +1,96 @@
+/* Hover Accesos Rápidos */
+section.container .acceso-hover {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+section.container .acceso-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.2rem rgba(33,56,119,0.3);
+  background: linear-gradient(145deg, #C7D74433, #21387722);
+}
+section.container .icono-acceso {
+  color: #C7D744;
+  transition: color 0.3s ease;
+}
+section.container .acceso-hover:hover .icono-acceso {
+  color: #213877;
+}
+
+/* Hover Noticias */
+section.container .noticia-hover {
+  transition: all 0.3s ease;
+}
+section.container .noticia-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(33,56,119,0.25);
+}
+
+
+/* Hover para tarjetas de cumpleaños */
+.cumple-hover {
+  background: linear-gradient(145deg, #ffffff, #f2f2f2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.cumple-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(33,56,119,0.25);
+  background: linear-gradient(145deg, #C7D74433, #21387722);
+}
+
+/* Icono circular */
+.bg-corporativo {
+  background-color: #C7D74433;
+  transition: all 0.3s ease;
+}
+.cumple-hover img {
+  transition: transform 0.3s ease;
+}
+.cumple-hover:hover img {
+  transform: scale(1.1);
+}
+.card-body {
+  padding: 2rem 1rem;
+}
+
+/* Nombre y fecha */
+.text-primary-cumple {
+  color: #213877;
+}
+.fecha-cumple {
+  background: linear-gradient(90deg, #C7D744, #213877);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
+
+
+/* Carousel full width mostrando toda la imagen */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+/* Controles más visibles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-inner {
+    height: auto;
+  }
+}
+

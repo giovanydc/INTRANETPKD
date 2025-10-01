@@ -1,0 +1,204 @@
+/* CSS */
+/*FOOTER*/
+/* Reset márgenes del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+  padding-top: 140px; /* Ajusta este valor según la altura real del header */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #213877;  /* azul corporativo */
+  color: #fff;
+  padding: 3rem 0 1.5rem 0;
+  margin: 0;
+}
+
+.footer a.footer-link {
+  color: #C7D744;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer hr.footer-hr {
+  border-color: rgba(255,255,255,0.2);
+  margin: 1.5rem 0;
+}
+
+.footer .footer-copy {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Opcional: si quieres que el footer siempre esté al final de la página */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { /* todas tus secciones excepto header/footer */
+  flex: 1;
+}
+
+  .icon {
+    color: #C7D744;
+    margin-right: 0.5rem;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #C7D744;
+    border-radius: 50%;
+    color: #C7D744;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .social-btn:hover {
+    background-color: #C7D744;
+    color: #213877;
+  }
+
+  .footer-hr {
+    border-color: #ffffff;
+    opacity: 0.2;
+    margin: 1.5rem 0;
+  }
+
+  .footer-copy {
+    color: #ffffff;
+    margin: 0;
+  }
+/* Navbar general */
+.navbar-pkd {
+    background-color: #C7D744;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+/* Links del navbar */
+.navbar-pkd .nav-link {
+    color: #ffffff; /* Texto blanco para buena visibilidad */
+    font-weight: 500;
+    margin-left: 15px; /* Separación entre links */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Primer link sin margen */
+.navbar-pkd .nav-item:first-child .nav-link {
+    margin-left: 0;
+}
+
+/* Efecto hover moderno */
+.navbar-pkd .nav-link:hover,
+.navbar-pkd .nav-link.active {
+    color: #213877; /* Color destacado al pasar o activo */
+}
+
+.navbar-pkd .nav-link::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #213877;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navbar-pkd .nav-link:hover::after,
+.navbar-pkd .nav-link.active::after {
+    width: 100%;
+}
+
+/* Botón toggle más moderno */
+.navbar-toggler {
+    border: 2px solid #213877; /* borde visible */
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%) sepia(100%) saturate(700%) hue-rotate(180deg);
+}
+
+/*Navegador flotante*/
+/* HEADER FIJO */
+.navegadorflot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;       /* Ocupa todo el ancho */
+  z-index: 1050;     /* Más alto que el contenido */
+  background: #fff;  /* Fondo blanco para que no se vea transparente */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* sombra ligera opcional */
+}
+
+
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+}
+
+.franja-azul {
+  width: 100%;
+  height: 11px;
+  background-color: #213877;
+}
+.franja-azul2 {
+  width: 100%;
+  height: 5px;
+  background-color: #213877;
+}
+
+.franja-blanca {
+  width: 100%;
+  height: 8px;
+  background-color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo-container span.navbar-text {
+  margin-left: auto; /* empuja el span a la derecha */
+}
+
+.logopacada { max-width: 180px; height: auto; }
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column;       
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 8px;                    
+  }
+
+  .logo-container span.navbar-text {
+    margin-left: 0; /* quitar margen en vertical */
+    text-align: center;
+  }
+
+  .logopacada {
+    max-width: 120px;
+  }
+}
+
