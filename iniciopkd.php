@@ -67,7 +67,7 @@ $hayCumple = $result->num_rows > 0;
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.php">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.php">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Capital Humano</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Areas</a></li>
@@ -270,27 +270,32 @@ $result = $conn->query($query);
   <div class="container">
     <div class="row">
       <!-- Logo y descripción -->
-      <div class="col-md-4 mb-4">
-        <h4 class="footer-title">MiEmpresa</h4>
-        <p class="footer-text">Soluciones innovadoras para tu negocio. Conectando personas y tecnología de manera profesional.</p>
-      </div>
+    <div class="col-md-4 mb-4 text-center">
+  <img src="img/Logo Pacada blanco.png" alt="" class="img-fluid d-block mx-auto">
+</div>
 
-      <!-- Links rápidos -->
-      <div class="col-md-2 mb-4">
-        <h5 class="footer-title">Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="footer-link">Inicio</a></li>
-          <li><a href="#" class="footer-link">Servicios</a></li>
-          <li><a href="#" class="footer-link">Nosotros</a></li>
-          <li><a href="#" class="footer-link">Contacto</a></li>
-        </ul>
-      </div>
+  <div class="col-md-2 mb-4">
+  <h5 class="footer-title">Links</h5>
+  <div class="row row-cols-2 row-cols-md-1">
+    <div class="col"><a href="#" class="footer-link">Inicio</a></div>
+    <div class="col"><a href="#" class="footer-link">Servicios</a></div>
+    <div class="col"><a href="#" class="footer-link">Nosotros</a></div>
+    <div class="col"><a href="#" class="footer-link">Calendario</a></div>
+    <div class="col"><a href="#" class="footer-link">Capital Humano</a></div>
+    <div class="col"><a href="#" class="footer-link">Áreas</a></div>
+    <div class="col"><a href="#" class="footer-link">Noticias</a></div>
+    <div class="col"><a href="#" class="footer-link">Buzón</a></div>
+    <div class="col"><a href="#" class="footer-link">Educación Financiera</a></div>
+  </div>
+</div>
+
 
       <!-- Contacto -->
       <div class="col-md-3 mb-4">
-        <h5 class="footer-title">Contacto</h5>
-        <p class="footer-contact"><i class="bi bi-envelope-fill icon"></i>info@miempresa.com</p>
-        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>+52 55 1234 5678</p>
+        <h5 class="footer-title">Contacto Soporte TI PACADA</h5>
+        <p class="footer-contact"><i class="bi bi-envelope-fill icon"></i>soporte@pacada.com.mx</p>
+        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2060 (Atención Ing. Adolfo Cortes)</p>
+        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2069 (Atención Lic. Giovany DC)</p>
         <p class="footer-contact"><i class="bi bi-geo-alt-fill icon"></i>Ciudad de México, México</p>
       </div>
 
@@ -310,7 +315,7 @@ $result = $conn->query($query);
 
     <!-- Copyright -->
     <div class="text-center">
-      <p class="footer-copy">&copy; 2025 MiEmpresa. Todos los derechos reservados.</p>
+      <p class="footer-copy">&copy; 2025 PACADA. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
