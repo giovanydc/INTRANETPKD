@@ -1,3 +1,4 @@
+
 /* Hover Accesos Rápidos */
 section.container .acceso-hover {
   background: linear-gradient(145deg, #f8f9fa, #e9ecef);
@@ -74,7 +75,6 @@ section.container .noticia-hover:hover {
 }
 
 
-
 /* Controles más visibles */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -82,15 +82,14 @@ section.container .noticia-hover:hover {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-  .carousel-inner {
-    height: auto;
-  }
-}
+@media (max-width: 992px) {
+    #carouselPKD, 
+    #carouselPKD .carousel-inner, 
+    #carouselPKD .carousel-item {
+        height: 300px; /* altura mínima en móviles */
+    }
 
-@media (max-width: 480px) {
-  .carousel-inner {
-    height: auto;
-  }
+    #carouselPKD .carousel-item img {
+        height: 100%;
+    }
 }
-

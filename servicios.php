@@ -18,51 +18,8 @@ if (empty($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header>
-<!-- HTML -->
- <!-- FRANJA AZUL -->
-<!-- NAV FIJO -->
-<div class="navegadorflot">
-  <div class="franja-azul"></div>
-  
-  <div class="logo-container d-flex align-items-center justify-content-between px-3">
-      <img class="logopacada" src="img/Logo Pacada.png" alt="Logo Pacada">
-      <div class="divsesion">
-        <span class="navbar-text text-black">
-          Hola de nuevo <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> |
-          <a href="logout.php" class="text-black text-decoration-underline">Cerrar sesión</a>
-        </span>
-      </div>
-  </div>
-  
-  <div class="franja-azul2"></div>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-pkd">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">INTRANET | PACADA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPKD">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarPKD">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="iniciopkd.php">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="nosotros.php">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Capital Humano</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Areas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Buzón</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Educación Financiera</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div class="franja-azul"></div>
-</div>
-</header>
-
+<?php $activePage = 'servicios'; ?>
+<?php include 'header.php'; ?>
 <main>
 <!-- HERO CON VIDEO Y GRADIENTE ANIMADO -->
 <section class="hero position-relative d-flex align-items-center text-center text-white" style="min-height: 80vh; overflow: hidden;">
@@ -77,17 +34,27 @@ if (empty($_SESSION['user_id'])) {
   <div class="overlay position-absolute w-100 h-100" style="top:0; left:0; z-index:-1;"></div>
 
   <!-- Contenido hero -->
-  <div class="container position-relative" style="z-index:1;">
-    <h1 class="fw-bold display-4" style="color: #C7D744;">SERVICIOS FINANCIEROS</h1>
-    <p class="lead mt-3 mb-4" style="max-width: 700px; margin: auto;">
+  <div class="container position-relative p-4 rounded-4" 
+       style="z-index:1; background: rgba(0,0,0,0.45); backdrop-filter: blur(6px); max-width: 850px;">
+    
+    <h1 class="fw-bold display-4 mb-4" 
+        style="color: #C7D744; text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">
+      SERVICIOS FINANCIEROS
+    </h1>
+    
+    <p class="lead mb-4" 
+       style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">
       Impulsa tu crecimiento con soluciones financieras modernas, rápidas y seguras.  
       Descubre cómo nuestros productos se adaptan a tus necesidades personales y empresariales.
     </p>
-    <a href="#servicios" class="btn btn-lg fw-bold" style="background:#C7D744; color:#213877; border:none;">
+    
+    <a href="#servicios" class="btn btn-lg fw-bold px-5 py-3" 
+       style="background:#C7D744; color:#213877; border:none; border-radius:50px; box-shadow: 0px 4px 12px rgba(0,0,0,0.5); transition: all 0.3s ease;">
       Conoce más
     </a>
   </div>
 </section>
+
 
 <!-- ESTILOS EXTRA -->
 <style>
@@ -117,7 +84,7 @@ if (empty($_SESSION['user_id'])) {
     <div class="row g-4">
       <!-- Crédito de Liquidez -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0">
+        <div class="card h-100 text-center shadow border-0 card-hover">
           <div class="card-body">
             <i class="bi bi-cash-stack display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Crédito de Liquidez</h5>
@@ -128,7 +95,7 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Crédito de Nómina -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0">
+        <div class="card h-100 text-center shadow border-0 card-hover">
           <div class="card-body">
             <i class="bi bi-wallet2 display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Crédito de Nómina</h5>
@@ -139,7 +106,7 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Préstamo de Auto -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0">
+        <div class="card h-100 text-center shadow border-0 card-hover">
           <div class="card-body">
             <i class="bi bi-car-front-fill display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Préstamo de Auto</h5>
@@ -150,7 +117,7 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Capital de Trabajo -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0">
+        <div class="card h-100 text-center shadow border-0 card-hover">
           <div class="card-body">
             <i class="bi bi-building display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Capital de Trabajo</h5>
@@ -161,7 +128,7 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Factoraje Financiero -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0">
+        <div class="card h-100 text-center shadow border-0 card-hover">
           <div class="card-body">
             <i class="bi bi-graph-up-arrow display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Factoraje Financiero</h5>
@@ -172,6 +139,19 @@ if (empty($_SESSION['user_id'])) {
     </div>
   </div>
 </section>
+
+<!-- Estilos para efecto hover -->
+<style>
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px; /* esquinas modernas */
+  }
+  .card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+</style>
+
 
 </main>
  

@@ -38,50 +38,8 @@ $hayCumple = $result->num_rows > 0;
 </head>
 <!-- ✅ Aquí agregas el data-hay-cumple al body -->
 <body data-hay-cumple="<?= $hayCumple ? '1' : '0' ?>">
-<header>
-<!-- HTML -->
- <!-- FRANJA AZUL -->
-<!-- NAV FIJO -->
-<div class="navegadorflot">
-  <div class="franja-azul"></div>
-  
-  <div class="logo-container d-flex align-items-center justify-content-between px-3">
-      <img class="logopacada" src="img/Logo Pacada.png" alt="Logo Pacada">
-      <div class="divsesion">
-        <span class="navbar-text text-black">
-          Hola de nuevo <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> |
-          <a href="logout.php" class="text-black text-decoration-underline">Cerrar sesión</a>
-        </span>
-      </div>
-  </div>
-  
-  <div class="franja-azul2"></div>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-pkd">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">INTRANET | PACADA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPKD">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarPKD">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="nosotros.php">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.php">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Capital Humano</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Areas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Buzón</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Educación Financiera</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div class="franja-azul"></div>
-</div>
-</header>
+<?php $activePage = 'inicio'; ?>
+<?php include 'header.php'; ?>
 <main>
 <!-- CAROUSEL-->
  <div id="carouselPKD" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -110,6 +68,7 @@ $hayCumple = $result->num_rows > 0;
     <span class="visually-hidden">Siguiente</span>
   </button>
 </div>
+
 <!-- ACCESOS RÁPIDOS -->
 <section class="container my-5">
   <h3 class="section-title text-center fw-bold" style="color: #213877;">Accesos Rápidos</h3>
@@ -364,5 +323,6 @@ $result = $conn->query($query);
     }
   });
 </script>
+<script src="js/moviles.js"></script>
 </body>
 </html>

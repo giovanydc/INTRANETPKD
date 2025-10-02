@@ -18,51 +18,9 @@ if (empty($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header>
-<!-- HTML -->
- <!-- FRANJA AZUL -->
-<!-- NAV FIJO -->
-<div class="navegadorflot">
-  <div class="franja-azul"></div>
-  
-  <div class="logo-container d-flex align-items-center justify-content-between px-3">
-      <img class="logopacada" src="img/Logo Pacada.png" alt="Logo Pacada">
-      <div class="divsesion">
-        <span class="navbar-text text-black">
-          Hola de nuevo <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> |
-          <a href="logout.php" class="text-black text-decoration-underline">Cerrar sesión</a>
-        </span>
-      </div>
-  </div>
-  
-  <div class="franja-azul2"></div>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-pkd">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">INTRANET | PACADA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPKD">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarPKD">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="iniciopkd.php">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.php">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Capital Humano</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Areas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Buzón</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Educación Financiera</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div class="franja-azul"></div>
-</div>
-</header>
-
+<?php $activePage = 'nosotros'; ?>
+<?php include 'header.php'; ?> 
+ <li class="nav-item"><a class="nav-link active!important" href="nosotros.php">Nosotros</a></li>
 <main>
   <!-- SECCIÓN NOSOTROS -->
 <section id="nosotros" class="py-5" style="background-color:#f8f9fa;">
@@ -227,5 +185,6 @@ if (empty($_SESSION['user_id'])) {
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/moviles.js"></script>
 </body>
 </html>
