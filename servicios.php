@@ -26,7 +26,7 @@ if (empty($_SESSION['user_id'])) {
   
   <!-- Video de fondo -->
   <video autoplay muted loop playsinline class="position-absolute w-100 h-100" style="object-fit: cover; top:0; left:0; z-index:-2;">
-    <source src="INTRANETPKD/video/finance.mp4" type="video/mp4">
+    <source src="video/finance.mp4" type="video/mp4">
     Tu navegador no soporta videos en HTML5.
   </video>
 
@@ -84,7 +84,9 @@ if (empty($_SESSION['user_id'])) {
     <div class="row g-4">
       <!-- Crédito de Liquidez -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0 card-hover">
+        <div class="card h-100 text-center shadow border-0 card-hover"
+            onclick="window.location.href='credliquid.php';" 
+       style="cursor:pointer;">
           <div class="card-body">
             <i class="bi bi-cash-stack display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Crédito de Liquidez</h5>
@@ -95,7 +97,9 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Crédito de Nómina -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0 card-hover">
+        <div class="card h-100 text-center shadow border-0 card-hover"
+        onclick="window.location.href='crednom.php';" 
+       style="cursor:pointer;">
           <div class="card-body">
             <i class="bi bi-wallet2 display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Crédito de Nómina</h5>
@@ -106,21 +110,25 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Préstamo de Auto -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0 card-hover">
+        <div class="card h-100 text-center shadow border-0 card-hover"
+        onclick="window.location.href='credauto.php';" 
+       style="cursor:pointer;">
           <div class="card-body">
             <i class="bi bi-car-front-fill display-4 mb-3" style="color:#C7D744;"></i>
-            <h5 class="card-title fw-bold" style="color:#213877;">Préstamo de Auto</h5>
+            <h5 class="card-title fw-bold" style="color:#213877;">Crédito de Auto</h5>
             <p class="card-text">Financia tu vehículo con planes accesibles y flexibles de pago.</p>
           </div>
         </div>
       </div>
 
-      <!-- Capital de Trabajo -->
+      <!-- Crédito Capital de Trabajo -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0 card-hover">
+        <div class="card h-100 text-center shadow border-0 card-hover"
+        onclick="window.location.href='credcapt.php';" 
+       style="cursor:pointer;">
           <div class="card-body">
             <i class="bi bi-building display-4 mb-3" style="color:#C7D744;"></i>
-            <h5 class="card-title fw-bold" style="color:#213877;">Capital de Trabajo</h5>
+            <h5 class="card-title fw-bold" style="color:#213877;">Crédito para Capital de Trabajo</h5>
             <p class="card-text">Impulsa el crecimiento de tu negocio con financiamiento para operación y expansión.</p>
           </div>
         </div>
@@ -128,7 +136,9 @@ if (empty($_SESSION['user_id'])) {
 
       <!-- Factoraje Financiero -->
       <div class="col-md-4 col-sm-6">
-        <div class="card h-100 text-center shadow border-0 card-hover">
+        <div class="card h-100 text-center shadow border-0 card-hover"
+        onclick="window.location.href='credff.php';" 
+       style="cursor:pointer;">
           <div class="card-body">
             <i class="bi bi-graph-up-arrow display-4 mb-3" style="color:#C7D744;"></i>
             <h5 class="card-title fw-bold" style="color:#213877;">Factoraje Financiero</h5>
@@ -155,60 +165,8 @@ if (empty($_SESSION['user_id'])) {
 
 </main>
  
-<!-- FOOTER MODERNO CON COLORES CORPORATIVOS - ESTILOS SEPARADOS -->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <!-- Logo y descripción -->
-    <div class="col-md-4 mb-4 text-center">
-  <img src="img/Logo Pacada blanco.png" alt="" class="img-fluid d-block mx-auto">
-</div>
-
-  <div class="col-md-2 mb-4">
-  <h5 class="footer-title">Links</h5>
-  <div class="row row-cols-2 row-cols-md-1">
-    <div class="col"><a href="#" class="footer-link">Inicio</a></div>
-    <div class="col"><a href="#" class="footer-link">Servicios</a></div>
-    <div class="col"><a href="#" class="footer-link">Nosotros</a></div>
-    <div class="col"><a href="#" class="footer-link">Calendario</a></div>
-    <div class="col"><a href="#" class="footer-link">Capital Humano</a></div>
-    <div class="col"><a href="#" class="footer-link">Áreas</a></div>
-    <div class="col"><a href="#" class="footer-link">Noticias</a></div>
-    <div class="col"><a href="#" class="footer-link">Buzón</a></div>
-    <div class="col"><a href="#" class="footer-link">Educación Financiera</a></div>
-  </div>
-</div>
-
-
-      <!-- Contacto -->
-      <div class="col-md-3 mb-4">
-        <h5 class="footer-title">Contacto Soporte TI PACADA</h5>
-        <p class="footer-contact"><i class="bi bi-envelope-fill icon"></i>soporte@pacada.com.mx</p>
-        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2060 (Atención Ing. Adolfo Cortes)</p>
-        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2069 (Atención Lic. Giovany DC)</p>
-        <p class="footer-contact"><i class="bi bi-geo-alt-fill icon"></i>Ciudad de México, México</p>
-      </div>
-
-      <!-- Redes sociales -->
-      <div class="col-md-3 mb-4">
-        <h5 class="footer-title">Síguenos</h5>
-        <div class="d-flex gap-3 mt-2">
-          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="footer-hr">
-
-    <!-- Copyright -->
-    <div class="text-center">
-      <p class="footer-copy">&copy; 2025 PACADA. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
+  <!--FOOTER-->
+<?php include 'footer.php'; ?>
 <!-- Script para detener el video al cerrar el modal -->
 <script>
   const videoModal = document.getElementById('videoModal');

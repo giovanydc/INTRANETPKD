@@ -17,7 +17,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark navbar-pkd">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">INTRANET | PACADA</a>
+        <a class="navbar-brand fw-bold" href="iniciopkd.php">INTRANET | PACADA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPKD">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,6 +25,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link <?php echo ($activePage == 'inicio') ? 'active' : ''; ?>" href="iniciopkd.php">Inicio</a></li>
             <li class="nav-item"> <a class="nav-link <?php echo ($activePage == 'nosotros') ? 'active' : ''; ?>" href="nosotros.php">Nosotros</a></li>
+        
             
             <!-- Dropdown Servicios -->
          <?php
@@ -37,10 +38,11 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
     Servicios
   </a>
   <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
-    <li><a class="dropdown-item" href="#">Crédito de Liquidez</a></li>
-    <li><a class="dropdown-item" href="#">Crédito de Nómina</a></li>
-    <li><a class="dropdown-item" href="#">Préstamo de Auto</a></li>
-    <li><a class="dropdown-item" href="#">Capital de Trabajo</a></li>
+    <li><a class="dropdown-item" href="credliquid.php">Crédito de Liquidez</a></li>
+    <li><a class="dropdown-item" href="crednom.php">Crédito de Nómina</a></li>
+    <li><a class="dropdown-item" href="credauto.php">Crédito de Auto</a></li>
+    <li><a class="dropdown-item" href="credcapt.php">Crédito para Capital de Trabajo</a></li>
+    <li><a class="dropdown-item" href="credff.php">Factoraje Financiero</a></li>
   </ul>
 </li>
 <style>

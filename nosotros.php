@@ -120,60 +120,8 @@ if (empty($_SESSION['user_id'])) {
 </div>
 </main>
  
-<!-- FOOTER MODERNO CON COLORES CORPORATIVOS - ESTILOS SEPARADOS -->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <!-- Logo y descripción -->
-    <div class="col-md-4 mb-4 text-center">
-  <img src="img/Logo Pacada blanco.png" alt="" class="img-fluid d-block mx-auto">
-</div>
-
-  <div class="col-md-2 mb-4">
-  <h5 class="footer-title">Links</h5>
-  <div class="row row-cols-2 row-cols-md-1">
-    <div class="col"><a href="#" class="footer-link">Inicio</a></div>
-    <div class="col"><a href="#" class="footer-link">Servicios</a></div>
-    <div class="col"><a href="#" class="footer-link">Nosotros</a></div>
-    <div class="col"><a href="#" class="footer-link">Calendario</a></div>
-    <div class="col"><a href="#" class="footer-link">Capital Humano</a></div>
-    <div class="col"><a href="#" class="footer-link">Áreas</a></div>
-    <div class="col"><a href="#" class="footer-link">Noticias</a></div>
-    <div class="col"><a href="#" class="footer-link">Buzón</a></div>
-    <div class="col"><a href="#" class="footer-link">Educación Financiera</a></div>
-  </div>
-</div>
-
-
-      <!-- Contacto -->
-      <div class="col-md-3 mb-4">
-        <h5 class="footer-title">Contacto Soporte TI PACADA</h5>
-        <p class="footer-contact"><i class="bi bi-envelope-fill icon"></i>soporte@pacada.com.mx</p>
-        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2060 (Atención Ing. Adolfo Cortes)</p>
-        <p class="footer-contact"><i class="bi bi-telephone-fill icon"></i>Ext 2069 (Atención Lic. Giovany DC)</p>
-        <p class="footer-contact"><i class="bi bi-geo-alt-fill icon"></i>Ciudad de México, México</p>
-      </div>
-
-      <!-- Redes sociales -->
-      <div class="col-md-3 mb-4">
-        <h5 class="footer-title">Síguenos</h5>
-        <div class="d-flex gap-3 mt-2">
-          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="footer-hr">
-
-    <!-- Copyright -->
-    <div class="text-center">
-      <p class="footer-copy">&copy; 2025 PACADA. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
+  <!--FOOTER-->
+<?php include 'footer.php'; ?>
 <!-- Script para detener el video al cerrar el modal -->
 <script>
   const videoModal = document.getElementById('videoModal');
