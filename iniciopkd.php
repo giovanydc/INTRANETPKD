@@ -5,12 +5,6 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
-// Datos de ejemplo dinámicos
-$totalUsuarios = 125;
-$reportesHoy = 32;
-$pendientes = 7;
-$nuevosIngresos = 5;
-
 // ✅ Aquí incluyes la conexión y consultas los cumpleaños
 include 'conexion.php';
 $mesActual = date('m');
@@ -225,6 +219,7 @@ $result = $conn->query($query);
   </main>
   <!--FOOTER-->
 <?php include 'footer.php'; ?>
+<?php include 'iralinicio.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

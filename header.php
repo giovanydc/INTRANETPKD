@@ -1,4 +1,87 @@
 <header>
+  <style>
+/* Fondo degradado animado */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* Contenedor centrado */
+.loader-content {
+  text-align: center;
+}
+
+/* Logo animado */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.loader-logo {
+  width: 150px;
+  animation: float 2s ease-in-out infinite;
+  z-index: 2;
+  position: relative;
+}
+
+/* Movimiento de flotación del logo */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Spinner alrededor del logo */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  margin-left: -90px;
+  margin-top: -90px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top: 6px solid #C7D744;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+  <!-- Loader ultra-profesional -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="logo-wrapper">
+        <img src="img/Logo Pacada.png" alt="Logo Pacada" class="loader-logo">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido principal oculto hasta que cargue -->
+  <div id="content" style="display:none;">
+
   <!-- NAV FIJO -->
   <div class="navegadorflot">
     <div class="franja-azul"></div>
@@ -58,7 +141,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 
             <!-- Dropdown Calendario -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="calendarioDropdown" role="button" data-bs-toggle="dropdown">
+              <a class="nav-link dropdown-toggle" href="calendario.php" id="calendarioDropdown" role="button" data-bs-toggle="dropdown">
                 Calendario
               </a>
               <ul class="dropdown-menu" aria-labelledby="calendarioDropdown">

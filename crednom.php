@@ -32,6 +32,7 @@ if (empty($_SESSION['user_id'])) {
 <img src="img/pfnomina2.png" class="img-fluid w-100" alt="Crédito de Nómina">
 </main>
 <?php include 'footer.php'; ?> 
+<?php include 'iralinicio.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

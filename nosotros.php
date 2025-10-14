@@ -20,7 +20,7 @@ if (empty($_SESSION['user_id'])) {
 <body>
 <?php $activePage = 'nosotros'; ?>
 <?php include 'header.php'; ?> 
- <li class="nav-item"><a class="nav-link active!important" href="nosotros.php">Nosotros</a></li>
+ 
 <main>
   <!-- SECCIÓN NOSOTROS -->
 <section id="nosotros" class="py-5" style="background-color:#f8f9fa;">
@@ -122,6 +122,7 @@ if (empty($_SESSION['user_id'])) {
  
   <!--FOOTER-->
 <?php include 'footer.php'; ?>
+<?php include 'iralinicio.php'; ?>
 <!-- Script para detener el video al cerrar el modal -->
 <script>
   const videoModal = document.getElementById('videoModal');

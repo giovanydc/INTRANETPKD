@@ -167,6 +167,7 @@ if (empty($_SESSION['user_id'])) {
  
   <!--FOOTER-->
 <?php include 'footer.php'; ?>
+<?php include 'iralinicio.php'; ?>
 <!-- Script para detener el video al cerrar el modal -->
 <script>
   const videoModal = document.getElementById('videoModal');

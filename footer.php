@@ -10,9 +10,9 @@
   <div class="col-md-2 mb-4">
   <h5 class="footer-title">Links</h5>
   <div class="row row-cols-2 row-cols-md-1">
-    <div class="col"><a href="#" class="footer-link">Inicio</a></div>
-    <div class="col"><a href="#" class="footer-link">Servicios</a></div>
-    <div class="col"><a href="#" class="footer-link">Nosotros</a></div>
+    <div class="col"><a href="iniciopkd.php" class="footer-link">Inicio</a></div>
+    <div class="col"><a href="nosotros.php" class="footer-link">Nosotros</a></div>
+    <div class="col"><a href="servicios.php" class="footer-link">Servicios</a></div>
     <div class="col"><a href="#" class="footer-link">Calendario</a></div>
     <div class="col"><a href="#" class="footer-link">Capital Humano</a></div>
     <div class="col"><a href="#" class="footer-link">Áreas</a></div>
@@ -51,4 +51,22 @@
       <p class="footer-copy">&copy; 2025 PACADA. Todos los derechos reservados.</p>
     </div>
   </div>
+  <script>
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+
+  // Fundido suave
+  loader.style.opacity = '0';
+
+  setTimeout(() => {
+    loader.style.display = 'none';
+    content.style.display = 'block';
+  }, 600); // coincide con la transición
+});
+</script>
+
+
+
+
 </footer>
