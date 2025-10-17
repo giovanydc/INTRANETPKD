@@ -108,6 +108,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link <?php echo ($activePage == 'inicio') ? 'active' : ''; ?>" href="iniciopkd.php">Inicio</a></li>
             <li class="nav-item"> <a class="nav-link <?php echo ($activePage == 'nosotros') ? 'active' : ''; ?>" href="nosotros.php">Nosotros</a></li>
+            <li class="nav-item"> <a class="nav-link <?php echo ($activePage == 'calendario') ? 'active' : ''; ?>" href="calendario.php">Calendario</a></li>
         
             
             <!-- Dropdown Servicios -->
@@ -139,17 +140,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 
 </style>
 
-            <!-- Dropdown Calendario -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="calendario.php" id="calendarioDropdown" role="button" data-bs-toggle="dropdown">
-                Calendario
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="calendarioDropdown">
-                <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
-                <li><a class="dropdown-item" href="#">Eventos</a></li>
-                <li><a class="dropdown-item" href="#">Capacitaciones</a></li>
-              </ul>
-            </li>
+           
 
             <!-- Dropdown Capital Humano -->
             <li class="nav-item dropdown">

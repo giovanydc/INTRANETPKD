@@ -1,128 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Intranet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .header-intranet {
-            background-color: #f8f9fa; /* Color de fondo claro para el encabezado */
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .main-content {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        .footer-intranet {
-            background-color: #343a40; /* Fondo oscuro para el pie de página */
-            color: white;
-            padding: 1rem 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario Laboral Financiero</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+:root {
+  --color-principal: #C7D744;
+  --color-secundario: #213877;
+  --color-fondo: #f8f9fa;
+  --color-hover: #edf2ff;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 850px;
+}
+
+#nav-calendario {
+  background: linear-gradient(90deg, var(--color-secundario), #1b2e6b);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#nav-calendario h4 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#nav-calendario button {
+  background-color: var(--color-principal);
+  border: none;
+  color: var(--color-secundario);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#nav-calendario button:hover {
+  background-color: #e2f065;
+  transform: scale(1.05);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.calendar.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.day-header {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-secundario);
+  text-transform: uppercase;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.day {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: right;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 80px;
+  box-shadow: inset 0 0 0 1px #e0e0e0;
+}
+
+.day:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.day.highlight {
+  background-color: var(--color-principal);
+  color: var(--color-secundario);
+  font-weight: bold;
+}
+
+.payday {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: var(--color-secundario);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    gap: 5px;
+    padding: 10px;
+  }
+  .day {
+    font-size: 0.8rem;
+    min-height: 60px;
+  }
+}
+</style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Intranet [Nombre Empresa]</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div class="container my-4 mt-5">
+  <div id="nav-calendario" class="d-flex justify-content-between align-items-center mb-4"> 
+    <button class="btn" id="prevMonth"><i class="bi bi-chevron-left"></i></button>
+    <h4 id="monthTitle">Octubre 2025</h4>
+    <div>
+      <button class="btn me-2"><i class="bi bi-plus-circle me-1"></i> Agregar Evento</button>
+      <button class="btn" id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
 
-    <header class="header-intranet text-center">
-        <div class="container">
-            <h1 class="display-4 text-primary">Conócenos Mejor</h1>
-            <p class="lead">Nuestra misión, visión y los valores que nos guían.</p>
-        </div>
-    </header>
+  <div class="calendar" id="calendarGrid">
+    <!-- Los días se llenan dinámicamente -->
+  </div>
 
-    ---
+  <div class="mt-4">
+    <h5 class="fw-bold text-secondary">Leyenda</h5>
+    <div class="legend-item">
+      <span class="legend-color" style="background-color: var(--color-principal);"></span> Día Especial / Reunión
+    </div>
+  </div>
+</div>
 
-    <section class="main-content">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <h2 class="mb-4">¿Quiénes Somos?</h2>
-                    <p class="fs-5">
-                        Somos **[Nombre Empresa]**, un equipo comprometido con **[menciona el enfoque principal, ej: la innovación tecnológica y la satisfacción del cliente]**. Fundada en **[Año]**, nuestra trayectoria se ha caracterizado por **[un logro o cualidad, ej: la excelencia en el desarrollo de soluciones a medida]**.
-                    </p>
+<script>
+const calendarGrid = document.getElementById('calendarGrid');
+const monthTitle = document.getElementById('monthTitle');
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
 
-                    <h3 class="mt-5">Nuestra Misión</h3>
-                    <p>
-                        [Misión de la empresa, ej: Proveer herramientas internas eficientes que optimicen los procesos de todos los departamentos, impulsando la productividad y la colaboración en el ambiente laboral.]
-                    </p>
+const months = [
+  "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+  "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+];
 
-                    <h3 class="mt-5">Nuestra Visión</h3>
-                    <p>
-                        [Visión de la empresa, ej: Ser reconocidos como el pilar fundamental tecnológico que sostiene el crecimiento y la estabilidad de la organización a nivel global.]
-                    </p>
-                    
-                    <a href="#" class="btn btn-primary mt-4">Ver Equipo</a>
-                </div>
+let currentMonth = 9; // Octubre
+let currentYear = 2025;
 
-                <div class="col-lg-5">
-                    <img src="https://es.linkedin.com/pulse/fotograf%C3%ADa-del-equipo-de-trabajo-las-empresas-rafael-alberto-martinez" class="img-fluid rounded shadow-lg" alt="Imagen de nuestro equipo">
-                    </div>
+function renderCalendar() {
+  // Agrega animación de salida
+  calendarGrid.classList.add('fade-out');
 
-            </div>
-            
-            <hr class="my-5">
+  setTimeout(() => {
+    calendarGrid.innerHTML = `
+      ${['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(d => `<div class="day-header">${d}</div>`).join('')}
+      ${Array.from({length: 31}, (_, i) => {
+        const day = i + 1;
+        const special = (day === 4 || day === 15) ? 
+          `<div class="payday">${day === 4 ? 'Pago' : 'Nómina'}</div>` : '';
+        const highlight = day === 3 ? 'highlight' : '';
+        return `<div class="day ${highlight}">${day}${special}</div>`;
+      }).join('')}
+    `;
+    monthTitle.textContent = `${months[currentMonth]} ${currentYear}`;
+    calendarGrid.classList.remove('fade-out');
+  }, 400); // Espera a que termine la animación antes de renderizar
+}
 
-            <h2 class="text-center mb-5">Nuestros Valores Centrales</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h4 class="text-info">Innovación</h4>
-                        <p>Fomentamos la creatividad y la búsqueda constante de soluciones.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h4 class="text-info">Compromiso</h4>
-                        <p>Nos dedicamos a nuestros objetivos con responsabilidad y ética.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h4 class="text-info">Colaboración</h4>
-                        <p>Creemos en el trabajo en equipo como motor de crecimiento.</p>
-                    </div>
-                </div>
-            </div>
+prevMonthBtn.addEventListener('click', () => {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  renderCalendar();
+});
 
-        </div>
-    </section>
+nextMonthBtn.addEventListener('click', () => {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  renderCalendar();
+});
 
-    ---
+renderCalendar();
+</script>
 
-    <footer class="footer-intranet text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2024 Intranet [Nombre Empresa]. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
