@@ -1,3 +1,12 @@
+
+<?php
+// 🔒 Bloque de seguridad de sesión
+session_start();
+if (empty($_SESSION['user_id'])) {
+    header('Location: index.php'); 
+    exit;
+}
+?>
 <header>
   <style>
 /* Fondo degradado animado */
@@ -89,10 +98,11 @@
     <div class="logo-container d-flex align-items-center justify-content-between px-3">
       <img class="logopacada" src="img/Logo Pacada.png" alt="Logo Pacada">
       <div class="divsesion">
-        <span class="navbar-text text-black">
-          Hola de nuevo <strong><?= htmlspecialchars($_SESSION['username']) ?></strong> |
-          <a href="logout.php" class="text-black text-decoration-underline">Cerrar sesión</a>
-        </span>
+       <span class="navbar-text text-black">
+  Hola de nuevo <strong><?= htmlspecialchars($_SESSION['fullname'] ?? $_SESSION['username']) ?></strong> |
+  <a href="logout.php" class="text-black text-decoration-underline">Cerrar sesión</a>
+</span>
+
       </div>
     </div>
     
@@ -109,6 +119,7 @@
             <li class="nav-item"><a class="nav-link <?php echo ($activePage == 'inicio') ? 'active' : ''; ?>" href="iniciopkd.php">Inicio</a></li>
             <li class="nav-item"> <a class="nav-link <?php echo ($activePage == 'nosotros') ? 'active' : ''; ?>" href="nosotros.php">Nosotros</a></li>
             <li class="nav-item"> <a class="nav-link <?php echo ($activePage == 'calendario') ? 'active' : ''; ?>" href="calendario.php">Calendario</a></li>
+          
         
             
             <!-- Dropdown Servicios -->
@@ -137,22 +148,24 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
     margin-top: 0; /* elimina salto */
   }
 }
-
 </style>
 
-           
-
             <!-- Dropdown Capital Humano -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="capitalDropdown" role="button" data-bs-toggle="dropdown">
-                Capital Humano
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="capitalDropdown">
-                <li><a class="dropdown-item" href="#">Directorio</a></li>
-                <li><a class="dropdown-item" href="#">Organigrama</a></li>
-                <li><a class="dropdown-item" href="#">Reclutamiento</a></li>
-              </ul>
-            </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="caphum.php" id="capitalDropdown" role="button">
+    Capital Humano
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="capitalDropdown">
+    <li><a class="dropdown-item" href="organigrama.php">Organigrama</a></li>
+    <li><a class="dropdown-item" href="induccion.php">Inducción</a></li>
+    <li><a class="dropdown-item" href="fyc.php">Formatos Internos</a></li>
+      <li><a class="dropdown-item" href="reclutamiento.php">Uniformes</a></li>
+      <li><a class="dropdown-item" href="reclutamiento.php">Eventos</a></li>
+      <li><a class="dropdown-item" href="reclutamiento.php">Bienestar</a></li>
+      <li><a class="dropdown-item" href="reclutamiento.php">Seguridad e Higiene</a></li>
+      <li><a class="dropdown-item" href="reclutamiento.php">Beneficios</a></li>
+  </ul>
+</li>
 
             <!-- Dropdown Áreas -->
             <li class="nav-item dropdown">
@@ -168,8 +181,8 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
             </li>
 
             <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Buzón</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Educación Financiera</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://192.168.10.9:8052/#/login" target="_blank">Buzón</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.pacada.com.mx/EduFin.html" target="_blank">Educación Financiera</a></li>
           </ul>
         </div>
       </div>

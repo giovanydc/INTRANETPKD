@@ -13,12 +13,12 @@
     <div class="col"><a href="iniciopkd.php" class="footer-link">Inicio</a></div>
     <div class="col"><a href="nosotros.php" class="footer-link">Nosotros</a></div>
     <div class="col"><a href="servicios.php" class="footer-link">Servicios</a></div>
-    <div class="col"><a href="#" class="footer-link">Calendario</a></div>
-    <div class="col"><a href="#" class="footer-link">Capital Humano</a></div>
+    <div class="col"><a href="calendario.php" class="footer-link">Calendario</a></div>
+    <div class="col"><a href="caphum.php" class="footer-link">Capital Humano</a></div>
     <div class="col"><a href="#" class="footer-link">Áreas</a></div>
     <div class="col"><a href="#" class="footer-link">Noticias</a></div>
-    <div class="col"><a href="#" class="footer-link">Buzón</a></div>
-    <div class="col"><a href="#" class="footer-link">Educación Financiera</a></div>
+    <div class="col"><a href="http://192.168.10.9:8052/#/login" class="footer-link">Buzón</a></div>
+    <div class="col"><a href="https://www.pacada.com.mx/EduFin.html" class="footer-link">Educación Financiera</a></div>
   </div>
 </div>
 

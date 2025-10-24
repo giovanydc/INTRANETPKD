@@ -49,7 +49,8 @@ $error = $_GET['error'] ?? '';
               </div>
             </form>
 
-            <p class="text-center text-muted mt-3">© 2025 PKD</p>
+            <p class="text-center text-muted mt-3">© 2025 PACADA. Todos los derechos reservados</p>
+            <p class="text-center text-muted mt-3">Diseño por Giovany DC</p>
           </div>
         </div>
       </div>

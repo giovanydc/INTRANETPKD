@@ -2,7 +2,7 @@
 require_once 'db.php';
 
 // Datos del primer usuario (cámbialos a lo que quieras)
-$username = 'giovanydc';
+$username = 'admin';
 $password_plain = 'Pacad@!'; // CONTRASEÑA con la que vas a entrar
 $email = 'admin@empresa.com';
 

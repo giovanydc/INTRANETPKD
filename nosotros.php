@@ -1,9 +1,4 @@
 <?php
-session_start();
-if (empty($_SESSION['user_id'])) {
-    header('Location: index.php'); 
-    exit;
-}
 ?>
 <!doctype html>
 <html lang="es">
@@ -15,6 +10,29 @@ if (empty($_SESSION['user_id'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/indexusuarios.css">
+  <!-- ESTILO MEJORADO -->
+<style>
+  /* Efecto hover para tarjetas */
+  .hover-effect:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  /* Suavizar hover de la imagen */
+  #nosotros img:hover {
+    transform: scale(1.03);
+  }
+
+  /* Responsivo: ajustar texto en móviles */
+  @media (max-width:767px){
+    #nosotros h2 {
+      font-size:2rem;
+    }
+    #nosotros p {
+      font-size:1rem;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -22,95 +40,43 @@ if (empty($_SESSION['user_id'])) {
 <?php include 'header.php'; ?> 
  
 <main>
-  <!-- SECCIÓN NOSOTROS -->
-<section id="nosotros" class="py-5" style="background-color:#f8f9fa;">
-  <div class="container text-center">
-
-    <!-- Imagen moderna completa -->
-    <div class="position-relative mb-5 rounded shadow-lg overflow-hidden">
-      <img src="img/people.jpg" alt="Nuestra Empresa"
-           class="img-fluid w-100" style="max-height:400px; object-fit:contain;">
-      <!-- Overlay degradado -->
-      <div style="
-           position:absolute;
-           top:0; left:0; width:100%; height:100%;
-           background: linear-gradient(to bottom, rgba(33,56,119,0.4), rgba(199,215,68,0.3));
-      "></div>
-    </div>
-
-    <!-- Título y descripción -->
-    <h2 class="fw-bold mb-3" style="color:#213877;">NOSOTROS</h2>
-    <p class="lead mb-4 text-muted">
-      Somos una Sociedad Financiera con más de 11 años de experiencia. 
-      Estamos comprometidos con promover el bienestar, crecimiento y fortalecimiento económico de nuestros clientes.
-    </p>
-
-    <!-- Botón de Video Local -->
-    <button type="button" class="btn btn-outline-light fw-bold mb-5" 
-            data-bs-toggle="modal" data-bs-target="#videoModal"
-            style="color:#213877; border:2px solid #C7D744;">
-      🎥 Ver Video Institucional
-    </button>
-
-    <!-- Row de Misión, Visión, Valores -->
-    <div class="row g-4">
-      <!-- MISIÓN -->
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <i class="bi bi-bullseye fs-1" style="color:#C7D744;"></i>
-            </div>
-            <h5 class="card-title fw-bold" style="color:#213877;">Nuestra Misión</h5>
-            <p class="card-text text-muted">
-              Brindar soluciones de financiamiento que impulsen el bienestar de nuestros clientes, 
-              mediante un portafolio de productos flexible adaptado a sus necesidades.
-            </p>
-          </div>
-        </div>
+<!-- SECCIÓN NUESTRA HISTORIA -->
+<section id="nosotros" class="py-5" style="background-color:#f3f4f6;">
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      
+      <!-- Imagen a la izquierda -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="img/Logo.png" alt="Nuestra Historia" 
+             class="img-fluid rounded-4 shadow-sm" 
+             style="width:100%; object-fit:cover; transition: transform 0.3s ease;">
       </div>
-
-      <!-- VISIÓN -->
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <i class="bi bi-eye fs-1" style="color:#C7D744;"></i>
-            </div>
-            <h5 class="card-title fw-bold" style="color:#213877;">Nuestra Visión</h5>
-            <p class="card-text text-muted">
-              Ser un referente en el sector financiero con liderazgo en los servicios, 
-              caracterizándonos por fomentar e implementar una experiencia única, 
-              fortaleciendo las relaciones y el compromiso con nuestros clientes.
-            </p>
-          </div>
-        </div>
+      
+      <!-- Texto a la derecha -->
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3" style="color:#213877;">Nuestra Historia</h2>
+        <p class="lead mb-4" style="color:#555; line-height:1.7;">
+          Somos una Sociedad Financiera con más de 11 años de experiencia. 
+          Estamos comprometidos con promover el bienestar, crecimiento y fortalecimiento económico de nuestros clientes.
+        </p>
+        <!-- Botón que abre el modal -->
+        <button type="button" class="btn btn-lg fw-bold px-4 py-2"
+                style="background-color:#C7D744; color:#213877; border:none; transition:0.3s;"
+                data-bs-toggle="modal" data-bs-target="#videoModal">
+          Conócenos
+        </button>
       </div>
-
-      <!-- VALORES -->
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <i class="bi bi-heart fs-1" style="color:#C7D744;"></i>
-            </div>
-            <h5 class="card-title fw-bold" style="color:#213877;">Nuestros Valores</h5>
-            <p class="card-text text-muted">
-              Honestidad, compromiso, seguridad, transparencia, confiabilidad, disponibilidad.
-            </p>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
-
-<!-- Modal Video Local -->
-<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+<!-- Modal de Video -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark">
+    <div class="modal-content border-0">
       <div class="modal-body p-0">
-        <video id="videoNosotros" controls style="width:100%; height:auto;">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <video id="nosotrosVideo" class="w-100 rounded-4" controls>
           <source src="video/nosotros25.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de video.
         </video>
@@ -118,19 +84,70 @@ if (empty($_SESSION['user_id'])) {
     </div>
   </div>
 </div>
+
+<!-- SECCIÓN MISIÓN, VISIÓN Y VALORES -->
+<section class="py-5" id="contacto"
+         style="background: linear-gradient(180deg, #f3f4f6 0%, #ffffff 100%);">
+  <div class="container">
+    <div class="row g-4 mt-4 text-center">
+      
+      <!-- MISIÓN -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-4 hover-effect" style="transition: transform 0.3s ease;">
+          <div class="mb-3"><i class="bi bi-bullseye fs-1" style="color:#C7D744;"></i></div>
+          <h5 class="fw-bold mb-2" style="color:#213877;">Nuestra Misión</h5>
+          <p class="text-muted">
+            Brindar soluciones de financiamiento que impulsen el bienestar de nuestros clientes, 
+            mediante un portafolio de productos flexible adaptado a sus necesidades.
+          </p>
+        </div>
+      </div>
+
+      <!-- VISIÓN -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-4 hover-effect" style="transition: transform 0.3s ease;">
+          <div class="mb-3"><i class="bi bi-eye fs-1" style="color:#C7D744;"></i></div>
+          <h5 class="fw-bold mb-2" style="color:#213877;">Nuestra Visión</h5>
+          <p class="text-muted">
+            Ser un referente en el sector financiero con liderazgo en los servicios, 
+            caracterizándonos por fomentar e implementar una experiencia única, 
+            fortaleciendo las relaciones y el compromiso con nuestros clientes.
+          </p>
+        </div>
+      </div>
+
+      <!-- VALORES -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-4 hover-effect" style="transition: transform 0.3s ease;">
+          <div class="mb-3"><i class="bi bi-heart fs-1" style="color:#C7D744;"></i></div>
+          <h5 class="fw-bold mb-2" style="color:#213877;">Nuestros Valores</h5>
+          <ul class="list-unstyled text-muted">
+            <li>✔ Honestidad</li>
+            <li>✔ Compromiso</li>
+            <li>✔ Seguridad</li>
+            <li>✔ Transparencia</li>
+            <li>✔ Confiabilidad</li>
+            <li>✔ Disponibilidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
  
   <!--FOOTER-->
 <?php include 'footer.php'; ?>
 <?php include 'iralinicio.php'; ?>
 <!-- Script para detener el video al cerrar el modal -->
+<!-- Script para detener video al cerrar modal -->
 <script>
   const videoModal = document.getElementById('videoModal');
-  const video = document.getElementById('videoNosotros');
+  const video = document.getElementById('nosotrosVideo');
 
   videoModal.addEventListener('hidden.bs.modal', () => {
-    video.pause();        // Pausa el video
-    video.currentTime = 0; // Reinicia al inicio
+    video.pause();
+    video.currentTime = 0; // Reinicia el video al cerrar
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

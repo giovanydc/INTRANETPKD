@@ -1,10 +1,4 @@
 <?php
-session_start();
-if (empty($_SESSION['user_id'])) {
-    header('Location: index.php'); 
-    exit;
-}
-
 // ✅ Aquí incluyes la conexión y consultas los cumpleaños
 include 'conexion.php';
 $mesActual = date('m');
@@ -29,6 +23,7 @@ $hayCumple = $result->num_rows > 0;
   <link rel="stylesheet" href="css/indexusuarios.css">
   <link rel="stylesheet" href="css/scinicio.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
 </head>
 <!-- ✅ Aquí agregas el data-hay-cumple al body -->
 <body data-hay-cumple="<?= $hayCumple ? '1' : '0' ?>">
@@ -68,16 +63,20 @@ $hayCumple = $result->num_rows > 0;
   <h3 class="section-title text-center fw-bold" style="color: #213877;">Accesos Rápidos</h3>
   <div class="row g-4 text-center">
     <div class="col-6 col-md-3">
+      <a href="calendario.php" class="text-decoration-none">
       <div class="card shadow-sm p-4 border-0 rounded-4 acceso-hover">
         <i class="bi bi-calendar-check display-5 icono-acceso"></i>
         <h6 class="mt-3 fw-semibold text-primary">Calendario</h6>
       </div>
+      </a>
     </div>
     <div class="col-6 col-md-3">
+      <a href="caphum.php" class="text-decoration-none">
       <div class="card shadow-sm p-4 border-0 rounded-4 acceso-hover">
         <i class="bi bi-people display-5 icono-acceso"></i>
         <h6 class="mt-3 fw-semibold text-primary">Capital Humano</h6>
       </div>
+      </a>
     </div>
     <div class="col-6 col-md-3">
       <div class="card shadow-sm p-4 border-0 rounded-4 acceso-hover">
@@ -86,10 +85,12 @@ $hayCumple = $result->num_rows > 0;
       </div>
     </div>
     <div class="col-6 col-md-3">
+      <a href="http://192.168.10.9:8052/#/login" class="text-decoration-none" target="_blank">
       <div class="card shadow-sm p-4 border-0 rounded-4 acceso-hover">
         <i class="bi bi-envelope display-5 icono-acceso"></i>
         <h6 class="mt-3 fw-semibold text-primary">Buzón</h6>
       </div>
+      </a>
     </div>
   </div>
 </section>
@@ -100,7 +101,7 @@ $hayCumple = $result->num_rows > 0;
   <div class="row g-4">
     <div class="col-md-4">
       <div class="card shadow-sm h-100 border-0 rounded-4 noticia-hover">
-        <img src="img/noticia1.jpg" class="card-img-top rounded-top-4" alt="Noticia 1">
+        <img src="img/ho.png" class="card-img-top rounded-top-4" alt="Noticia 1">
         <div class="card-body">
           <h5 class="card-title fw-semibold" style="color: #213877;">Nueva política interna</h5>
           <p class="card-text text-secondary">Conoce las actualizaciones en la política de home office.</p>
@@ -109,7 +110,7 @@ $hayCumple = $result->num_rows > 0;
     </div>
     <div class="col-md-4">
       <div class="card shadow-sm h-100 border-0 rounded-4 noticia-hover">
-        <img src="img/noticia2.jpg" class="card-img-top rounded-top-4" alt="Noticia 2">
+        <img src="img/cap.png" class="card-img-top rounded-top-4" alt="Noticia 2">
         <div class="card-body">
           <h5 class="card-title fw-semibold" style="color: #213877;">Capacitación 2025</h5>
           <p class="card-text text-secondary">Inscríbete a las capacitaciones en línea de este trimestre.</p>
@@ -118,7 +119,7 @@ $hayCumple = $result->num_rows > 0;
     </div>
     <div class="col-md-4">
       <div class="card shadow-sm h-100 border-0 rounded-4 noticia-hover">
-        <img src="img/noticia3.jpg" class="card-img-top rounded-top-4" alt="Noticia 3">
+        <img src="img/recog.jpg" class="card-img-top rounded-top-4" alt="Noticia 3" height="420">
         <div class="card-body">
           <h5 class="card-title fw-semibold" style="color: #213877;">Reconocimiento</h5>
           <p class="card-text text-secondary">Felicitamos a los colaboradores destacados de este mes.</p>
@@ -183,39 +184,127 @@ $result = $conn->query($query);
     </div>
   <?php endif; ?>
 </div>
-  </div>
-<!-- CALENDARIO CORPORATIVO -->
-<section class="container my-5">
-  <h3 class="section-title text-center">Calendario Corporativo</h3>
-  <div class="table-responsive">
-    <table class="table table-striped align-middle text-center">
-      <thead class="table-primary">
-        <tr>
-          <th>Fecha</th>
-          <th>Evento</th>
-          <th>Área</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>01/10/2025</td>
-          <td>Junta Directiva</td>
-          <td>Dirección</td>
-        </tr>
-        <tr>
-          <td>05/10/2025</td>
-          <td>Capacitación Excel</td>
-          <td>Capital Humano</td>
-        </tr>
-        <tr>
-          <td>10/10/2025</td>
-          <td>Cumpleaños colaboradores</td>
-          <td>Recursos Humanos</td>
-        </tr>
-      </tbody>
-    </table>
+</div>
+  
+  <!--TENDENCIAS-->
+<section id="noticias-finanzas" class="py-5" style="background-color:#f3f4f6;">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold" style="color: var(--secundario);">
+        <i id="grafica" class="bi bi-graph-up-arrow me-2"></i>Tendencias Financieras
+      </h2>
+      <p class="text-muted">Mantente al día con las últimas noticias del sector financiero.</p>
+    </div>
+
+    <div id="feed-finanzas" class="row g-4 justify-content-center"></div>
   </div>
 </section>
+
+<script>
+  async function cargarNoticias() {
+    try {
+      const rssURL = 'https://www.elfinanciero.com.mx/rss';
+      const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssURL}`);
+      const data = await response.json();
+
+      const contenedor = document.getElementById('feed-finanzas');
+      contenedor.innerHTML = data.items.slice(0, 6).map(item => `
+        <div class="col-md-4 col-sm-6">
+          <div class="noticia-card h-100 position-relative">
+            <div class="card-img" 
+                 style="background-image: url('${item.enclosure?.link || 'img/default-news.jpg'}');">
+            </div>
+            <div class="card-overlay p-3">
+              <h6 class="card-title fw-bold">${item.title}</h6>
+              <p class="card-text small">${item.pubDate.slice(0,16)}</p>
+              <a href="${item.link}" target="_blank" class="btn btn-sm btn-corporativo mt-2">
+                Leer más <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+    } catch (error) {
+      console.error('Error cargando noticias:', error);
+      document.getElementById('feed-finanzas').innerHTML = `
+        <div class="text-center text-danger">No se pudieron cargar las noticias.</div>`;
+    }
+  }
+  cargarNoticias();
+</script>
+
+<style>
+  :root {
+    --principal: #C7D744; /* verde-limón */
+    --secundario: #213877; /* azul oscuro */
+  }
+
+    #grafica{
+      color: #C7D744;
+    }
+  .noticia-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(33,56,119,0.15);
+  }
+
+  .noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.8rem 1.5rem rgba(33,56,119,0.3);
+  }
+
+  /* Imagen fija */
+  .card-img {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid rgba(199,215,68,0.3);
+  }
+
+  /* Overlay con degradado corporativo */
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(199,215,68,0.2) 0%, rgba(33,56,119,0.85) 100%);
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+    color: rgba(199,215,68,0.9);
+    font-weight: bold;
+    
+  }
+
+  /* Botones corporativos */
+.btn-corporativo {
+  border: 1px solid #213877;       /* azul oscuro */
+  background-color: #213877 !important;       /* fondo azul oscuro */
+  color: #C7D744 !important;                  /* texto verde-limón */
+  font-weight: bold;                /* texto en negrita */
+  transition: all 0.3s ease;
+}
+
+.btn-corporativo:hover {
+  background-color: #C7D744 !important;       /* fondo verde-limón al hover */
+  color: #ffffffff !important;                  /* texto azul oscuro al hover */
+  border-color: #C7D744;
+}
+
+</style>
+
   </main>
   <!--FOOTER-->
 <?php include 'footer.php'; ?>

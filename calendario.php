@@ -1,9 +1,4 @@
 <?php
-session_start();
-if (empty($_SESSION['user_id'])) {
-    header('Location: index.php'); 
-    exit;
-}
 ?>
 <!doctype html>
 <html lang="es">
@@ -173,7 +168,7 @@ if (empty($_SESSION['user_id'])) {
     --color-hover: #edf2ff;
   }
 
-  body { background-color: var(--color-fondo); font-family: "Poppins", sans-serif; }
+  
 
   #contenedorhero{ margin-top: 50px; }
 
